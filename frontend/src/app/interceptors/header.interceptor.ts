@@ -20,7 +20,7 @@ export class HeaderInterceptor implements HttpInterceptor {
     if (isApiUrl) {
       request = request.clone({
         setHeaders: {
-          'Celonis-Auth': 'totally_secret',
+          'Fsystem-Auth': 'totally_secret',
         },
       });
     }

@@ -46,6 +46,6 @@ it("Create Task - Count type - Fail", () => {
 
   cy.get(".mat-simple-snackbar > span").should(
     "have.text",
-    "Validation failed for argument [0] in public com.celonis.challenge.model.ProjectGenerationTask com.celonis.challenge.controllers.TaskController.createTask(com.celonis.challenge.model.ProjectGenerationTask): [Error in object 'projectGenerationTask': codes [CountTaskValidation.projectGenerationTask,CountTaskValidation]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [projectGenerationTask.,]; arguments []; default message []]; default message [Invalid Range: must be an integer, start must be minor that end, start must be mayor or equal to 0]] "
+    "Validation failed for argument [0] in public com.fsystem.task-management.model.ProjectGenerationTask com.fsystem.task-management.controllers.TaskController.createTask(com.fsystem.task-management.model.ProjectGenerationTask): [Error in object 'projectGenerationTask': codes [CountTaskValidation.projectGenerationTask,CountTaskValidation]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [projectGenerationTask.,]; arguments []; default message []]; default message [Invalid Range: must be an integer, start must be minor that end, start must be mayor or equal to 0]] "
   );
 });
