@@ -1,0 +1,30 @@
+<mat-list>
+  <mat-list-item class="item" *ngFor="let task of tasks">
+    <div mat-line class="title" (click)="emitClickOnItem(task)">
+      {{ task.type }}
+    </div>
+    <div mat-line class="name" (click)="emitClickOnItem(task)">
+      {{ task.name }}
+    </div>
+    <div mat-line class="status" (click)="emitClickOnItem(task)">
+      {{ task.status }}
+    </div>
+    <div>
+      <div *ngIf="isRunning(task); else deleteButton">
+        <app-button
+          title="Cancel"
+          [type]="task.status"
+          (click)="emitCancel(task.id)"
+        ></app-button>
+      </div>
+
+      <ng-template #deleteButton>
+        <app-button
+          *ngIf="showButton"
+          title="Delete"
+          (click)="emitDelete(task.id)"
+        ></app-button>
+      </ng-template>
+    </div>
+  </mat-list-item>
+</mat-list>

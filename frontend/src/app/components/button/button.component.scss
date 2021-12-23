@@ -1,0 +1,10 @@
+@import "../../../styles.scss";
+
+.custom-button {
+  background: $red-color;
+  color: $white-color;
+}
+.blue {
+  color: $white-color;
+  background: $main-color !important;
+}

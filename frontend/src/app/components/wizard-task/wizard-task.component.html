@@ -1,0 +1,108 @@
+<mat-horizontal-stepper #stepper>
+  <mat-step [stepControl]="form" label="Choose task type">
+    <div class="step-container">
+      <div class="list-container">
+        <app-list
+          [tasks]="selectionTask"
+          [showButton]="false"
+          (eventClickItem)="setTypeToTask($event)"
+        ></app-list>
+      </div>
+    </div>
+  </mat-step>
+
+  <mat-step label="Configure task">
+    <div class="step-container">
+      <form [formGroup]="form">
+        <div layout="row">
+          <span
+            >Please input the configuration for `Countr from X to Y´ task.</span
+          >
+        </div>
+
+        <div layout="row">
+          <mat-form-field>
+            <mat-label>Counting from number</mat-label>
+            <input matInput formControlName="start" required />
+          </mat-form-field>
+        </div>
+
+        <div layout="row">
+          <mat-form-field>
+            <mat-label>Counting to number</mat-label>
+            <input matInput formControlName="end" required />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button class="button-container" mat-button matStepperPrevious>
+            Back
+          </button>
+          <button
+            (click)="createCountTask()"
+            class="button-container"
+            mat-button
+          >
+            Next
+          </button>
+        </div>
+      </form>
+    </div>
+  </mat-step>
+
+  <mat-step label="Execute task">
+    <div class="step-container">
+      <div *ngIf="taskIsRunning; else askUser">
+        <div layout="row">
+          <span>Executing now..</span>
+        </div>
+
+        <div layout="row">
+          <span
+            >We are currently at number {{ progress }} /{{ task!.end }}
+          </span>
+        </div>
+
+        <div layout="row" class="spinner-container">
+          <app-spinner></app-spinner>
+        </div>
+
+        <div>
+          <app-button
+            class="button-container"
+            title="Cancel execution"
+            (click)="emitCancel()"
+          ></app-button>
+        </div>
+      </div>
+
+      <ng-template class="running-container" #askUser>
+        <div layout="row">
+          <span>Do you want to run the task?</span>
+        </div>
+        <div layout="row">
+          <button class="button-container" mat-button (click)="executeTask()">
+            Yes
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </mat-step>
+
+  <mat-step label="Summary">
+    <div class="step-container">
+      <span>Task finished execution successfuly</span>
+
+      <span *ngIf="isCountTask()"
+        >Counted from {{ task!.start }} to {{ task!.end }}
+      </span>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+<div class="close-container">
+  <app-button
+    class="button-container"
+    title="Close"
+    (click)="close()"
+  ></app-button>
+</div>

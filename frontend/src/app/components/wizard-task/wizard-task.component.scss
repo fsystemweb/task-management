@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+
+.close-container {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.step-container {
+  text-align: center;
+  .list-container {
+    text-align: left;
+  }
+
+  .button-container {
+    margin: 1rem;
+  }
+}
+
+::ng-deep .mat-button {
+  background: $main-color;
+  color: $white-color;
+}
+
+// avoid user select step manually
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+
+.spinner-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 45%;
+}

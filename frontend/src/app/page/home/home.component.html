@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<div *ngIf="flagShowList; else wizard">
+  <div class="action-container">
+    <app-circle-button (click)="startWizard()"></app-circle-button>
+  </div>
+  <app-list
+    [tasks]="tasks"
+    (eventCancel)="cancelTask($event)"
+    (eventDelete)="deleteTask($event)"
+    (eventClickItem)="goToTask($event)"
+  ></app-list>
+</div>
+
+<ng-template #wizard>
+  <app-wizard-task
+    (eventCancel)="cancelTask($event)"
+    (eventCloseWizard)="closeWizard()"
+    [task]="selectedTask"
+  ></app-wizard-task>
+</ng-template>
