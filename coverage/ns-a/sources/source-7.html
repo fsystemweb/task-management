@@ -1,96 +1,106 @@
+
+
+
 <!DOCTYPE html>
 <html id="htmlId">
-  <head>
-    <title>Coverage Report > ManageThreadServiceInterface</title>
-    <style type="text/css">
-      @import "../../css/coverage.css";
-      @import "../../css/highlight-idea.css";
-    </style>
-    <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  </head>
+<head>
+  <title>Coverage Report > TaskServiceInterface</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
 
-  <body>
-    <div class="content">
-      <div class="breadCrumbs">
-        Current scope: <a href="../../index.html">all classes</a>
-        <span class="separator">|</span>
-        <a href="../index.html">com.fsystem.task-management.services</a>
-      </div>
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.fsystem.taskmanagement.services</a>
+</div>
 
-      <h1>
-        Coverage Summary for Class: ManageThreadServiceInterface
-        (com.fsystem.task-management.services)
-      </h1>
+<h1>Coverage Summary for Class: TaskServiceInterface (com.fsystem.taskmanagement.services)</h1>
 
-      <table class="coverageStats">
-        <tr>
-          <th class="name">Class</th>
-        </tr>
-        <tr>
-          <td class="name">
-            ManageThreadServiceInterface$MockitoMock$2041465102
-          </td>
-        </tr>
-        <tr>
-          <td class="name">
-            ManageThreadServiceInterface$MockitoMock$2041465102$auxiliary$0ZQsedCe
-          </td>
-        </tr>
-        <tr>
-          <td class="name">
-            ManageThreadServiceInterface$MockitoMock$2041465102$auxiliary$FBGM6QxC
-          </td>
-        </tr>
-        <tr>
-          <td class="name"><strong>Total</strong></td>
-        </tr>
-      </table>
+<table class="coverageStats">
 
-      <br />
-      <br />
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">TaskServiceInterface$MockitoMock$1973520071</td>
+  </tr>
+  <tr>
+    <td class="name">TaskServiceInterface$MockitoMock$1973520071$auxiliary$6jxI8Kao</td>
+  </tr>
+  <tr>
+    <td class="name">TaskServiceInterface$MockitoMock$1973520071$auxiliary$MORr0TDe</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
 
-      <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.fsystem.task-management.services;
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.fsystem.taskmanagement.services;
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;import com.fsystem.task-management.model.ProjectGenerationTask;
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import java.util.concurrent.CompletableFuture;
-<i class="no-highlight">6</i>&nbsp;
-<i class="no-highlight">7</i>&nbsp;public interface ManageThreadServiceInterface {
-<i class="no-highlight">8</i>&nbsp;    public CompletableFuture createNewThread(ProjectGenerationTask task);
+<i class="no-highlight">3</i>&nbsp;import com.fsystem.taskmanagement.model.EnumStatusTask;
+<i class="no-highlight">4</i>&nbsp;import com.fsystem.taskmanagement.model.ProjectGenerationTask;
+<i class="no-highlight">5</i>&nbsp;import org.springframework.core.io.FileSystemResource;
+<i class="no-highlight">6</i>&nbsp;import org.springframework.http.ResponseEntity;
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;import java.util.List;
 <i class="no-highlight">9</i>&nbsp;
-<i class="no-highlight">10</i>&nbsp;    public int getThreadStatus(String taskId);
-<i class="no-highlight">11</i>&nbsp;
-<i class="no-highlight">12</i>&nbsp;    public void stopThreadByTaskId(String taskId);
-<i class="no-highlight">13</i>&nbsp;
-<i class="no-highlight">14</i>&nbsp;}
+<i class="no-highlight">10</i>&nbsp;public interface TaskServiceInterface {
+<i class="no-highlight">11</i>&nbsp;    List&lt;ProjectGenerationTask&gt; listTasks();
+<i class="no-highlight">12</i>&nbsp;
+<i class="no-highlight">13</i>&nbsp;    ProjectGenerationTask createTask(ProjectGenerationTask projectGenerationTask);
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;    ProjectGenerationTask getTask(String taskId);
+<i class="no-highlight">16</i>&nbsp;
+<i class="no-highlight">17</i>&nbsp;    ProjectGenerationTask update(String taskId, ProjectGenerationTask projectGenerationTask);
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    void delete(String taskId);
+<i class="no-highlight">20</i>&nbsp;
+<i class="no-highlight">21</i>&nbsp;    void executeTask(String taskId);
+<i class="no-highlight">22</i>&nbsp;
+<i class="no-highlight">23</i>&nbsp;    int getTaskProgress(String taskId);
+<i class="no-highlight">24</i>&nbsp;
+<i class="no-highlight">25</i>&nbsp;    void cancelTask(String taskId);
+<i class="no-highlight">26</i>&nbsp;
+<i class="no-highlight">27</i>&nbsp;    ResponseEntity&lt;FileSystemResource&gt; getTaskResult(String taskId);
+<i class="no-highlight">28</i>&nbsp;}
 </div>
 </pre>
-    </div>
+</div>
 
-    <script type="text/javascript">
-      (function () {
-        var msie = false,
-          msie9 = false;
-        /*@cc_on
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
       msie = true;
       @if (@_jscript_version >= 9)
         msie9 = true;
       @end
     @*/
 
-        if (!msie || (msie && msie9)) {
-          var codeBlock = document.getElementById("sourceCode");
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
 
-          if (codeBlock) {
+        if (codeBlock) {
             hljs.highlightBlock(codeBlock);
-          }
         }
-      })();
-    </script>
+    }
+})();
+</script>
 
-    <div class="footer">
-      <div style="float: right">generated on 2021-12-20 17:00</div>
-    </div>
-  </body>
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-12-23 22:27</div>
+</div>
+</body>
 </html>
