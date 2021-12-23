@@ -1,6 +1,10 @@
 # Task Controller
 
-	Run scheduled tasks using multithreading with Java and Completable Future, angular v11, and Integration test using Cypress.
+Run scheduled tasks using multithreading with Java and Completable Future, angular v11, and Integration test using Cypress.
+
+# Demo
+
+![demo.gif](demo.gif)
 
 # Swagger documentation
 
@@ -47,7 +51,6 @@ taskCleanUp.ageMoreThan= 259200
 - Run `bash npm i` to install dependencies
 - Run `bash npm run test`
 - Use Electron browser
-
 
 # Frameworks
 
