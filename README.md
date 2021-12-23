@@ -18,7 +18,6 @@ Run scheduled tasks using multithreading with Java and Completable Future, angul
 
 You could check coverage folder to see in detail:
 
-![img.png](img.png)
 
 # Information
 
