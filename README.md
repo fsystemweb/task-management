@@ -16,7 +16,7 @@ Run scheduled tasks using multithreading with Java and Completable Future, angul
 
 # Test Converage Backend
 
-You could check coverage folder to see in detail:
+You could check coverage folder to see in detail
 
 
 # Information
@@ -39,16 +39,16 @@ taskCleanUp.ageMoreThan= 259200
 
 - Start Frontend project:
   - Go to frontend folder
-  - Run `bash npm i` to install dependencies
-  - Run `bash npm run start`
+  - Run `npm i` to install dependencies
+  - Run `npm run start`
 - Visit http://localhost:4200
 
 # Run e2e
 
 - Start Application
 - Go to e2e folder
-- Run `bash npm i` to install dependencies
-- Run `bash npm run test`
+- Run `npm i` to install dependencies
+- Run `npm run test`
 - Use Electron browser
 
 # Frameworks
