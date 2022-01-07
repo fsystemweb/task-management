@@ -32,10 +32,7 @@ public class ManageThreadService implements ManageThreadServiceInterface {
     private CompletableFuture executor(TaskCounterRunnable runnable) {
         runnables.add(runnable);
 
-        CustomExecutor customExecutor = new CustomExecutor();
-
-
-        return CompletableFuture.runAsync(runnable, customExecutor.getInstance())
+        return CompletableFuture.runAsync(runnable, CustomExecutor.getInstance())
                 .thenRun(() -> {
                     runnables.remove(runnable);
                 });

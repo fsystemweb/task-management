@@ -8,18 +8,19 @@ import java.util.concurrent.Executors;
 
 @Component
 public class CustomExecutor {
-    private ExecutorService executorService = null;
+    private static ExecutorService executorService = null;
 
+    private CustomExecutor(){}
 
     private static int MAX_THREADS;
 
-    @Value("${maximumThreads}")
+    @Value("${maximumThreads}:10")
     public void setMAX_THREADS(int maximumThreads) {
         MAX_THREADS = maximumThreads;
     }
 
 
-    public synchronized ExecutorService getInstance() {
+    public static synchronized ExecutorService getInstance() {
         if (executorService == null) {
             executorService = Executors.newFixedThreadPool(MAX_THREADS);
         }
